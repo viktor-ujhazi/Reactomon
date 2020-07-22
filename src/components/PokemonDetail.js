@@ -49,9 +49,9 @@ export class PokemonDetail extends Component {
   }
 }
 
-// PropTypes
-PokemonDetail.propTypes = {
-  pokemon: PropTypes.object.isRequired,
-};
+// // PropTypes
+// PokemonDetail.propTypes = {
+//   pokemon: PropTypes.object.isRequired,
+// };
 
 export default PokemonDetail;
