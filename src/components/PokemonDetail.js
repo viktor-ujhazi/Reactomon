@@ -20,17 +20,30 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import axios from 'axios';
 
 export class PokemonDetail extends Component {
+  state = {
+    id:0,
+    img:'',
+
+  }
+
   componentDidMount = (props) => {
-    console.log(this.props.pokemon);
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon")
+      .then((res) => this.setState({ pokemons: res.data.results }))
+      .then(axios
+        .get(this.props.pokemon.url)
+        .then((result) => this.setState({ id: result.data.id , img: result.data.sprites.front_default})));
   };
 
   render() {
     const { name } = this.props.pokemon;
     return (
       <div>
-        <p>{name}</p>
+        <p>{name} </p>
+        <img src={this.state.img}/>
       </div>
     );
   }
