@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Pokemon from "./Pokemon";
+import PokemonDetail from "./PokemonDetail";
 import axios from "axios";
 import PropTypes from "prop-types";
 
@@ -16,7 +16,7 @@ class PokemonList extends Component {
 
   render() {
     return this.state.pokemons.map((pokemon) => (
-      <Pokemon key={pokemon.name} pokemon={pokemon} />
+      <PokemonDetail key={pokemon.name} pokemon={pokemon} />
     ));
   }
 }
