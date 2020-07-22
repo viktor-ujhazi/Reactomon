@@ -22,6 +22,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { Card } from "react-bootstrap";
 
 export class PokemonDetail extends Component {
   state = {
@@ -46,20 +47,32 @@ export class PokemonDetail extends Component {
   render() {
     const { name } = this.props.pokemon;
     return (
-      <div>
-        <Link to={`/Pokemon/${this.state.id}`}>
-          <p>{name} </p>
-        </Link>
-
-        <img src={this.state.img} />
-      </div>
+      <Link to={`/Pokemon/${this.state.id}`}>
+        <Card
+          style={{
+            backgroundColor: "peachpuff",
+            border: "solid",
+            marginBlockStart: "20px",
+            marginBlockEnd: "20px",
+            marginLeft: "20px",
+            marginRight: "20px",
+            width: "150px",
+            textAlign: "center",
+          }}
+        >
+          <Card.Img variant="top" src={this.state.img} />
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+          </Card.Body>
+        </Card>
+      </Link>
     );
   }
 }
 
-// PropTypes
-PokemonDetail.propTypes = {
-  pokemon: PropTypes.object.isRequired,
-};
+// // PropTypes
+// PokemonDetail.propTypes = {
+//   pokemon: PropTypes.object.isRequired,
+// };
 
 export default PokemonDetail;

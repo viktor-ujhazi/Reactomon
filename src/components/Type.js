@@ -15,9 +15,9 @@ export class Type extends Component {
     );
   }
 }
-// PropTypes
-Type.propTypes = {
-    pokemon: PropTypes.object.isRequired,
-  };
+// // PropTypes
+// Type.propTypes = {
+//     pokemon: PropTypes.object.isRequired,
+//   };
 
 export default Type;
