@@ -50,14 +50,11 @@ export class PokemonDetail extends Component {
         marginRight: "20px",
         width: "150px",
         textAlign: "center"}}>
-          
+
         <Card.Img variant="top" src={this.state.img}/>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
-
-        {/* <p>{name} </p>
-        <img src={this.state.img}/> */}
       </Card>
     );
   }

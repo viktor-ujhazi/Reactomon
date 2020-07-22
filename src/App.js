@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={{textAlign: "-webkit-center"}}>
           <img src="http://pixelartmaker.com/art/435fe298d486154.png"/>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmlwlZ6bkQBzmOFmQ8YR8pCf6EeYJaw6iZsw&usqp=CAU" style={{paddingLeft: "20%"}}/>
         </div>
@@ -26,7 +26,11 @@ class App extends Component {
 
         <Switch>
           <Route path="/Pokemons">
-            <ul><PokemonList /></ul>
+            <ul style={{ textAlign: "center"}}><PokemonList /></ul>
+            <div style={{textAlign: "center",  marginBlockEnd: "50px"}}>
+              <button style={{marginRight: "50px"}}>Previous</button>
+              <button>Next</button>
+            </div>
           </Route>
 
           <Route path="/Types">
