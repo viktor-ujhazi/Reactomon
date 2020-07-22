@@ -16,7 +16,7 @@ class PokemonList extends Component {
 
   render() {
     return this.state.pokemons.map((pokemon) => (
-      <PokemonDetail key={pokemon.name} pokemon={pokemon} />
+      <li style={{display: "inline-block"}}><PokemonDetail key={pokemon.name} pokemon={pokemon} /></li>
     ));
   }
 }

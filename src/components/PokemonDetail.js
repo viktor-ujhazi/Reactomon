@@ -21,6 +21,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import axios from 'axios';
+import {Card} from 'react-bootstrap';
 
 export class PokemonDetail extends Component {
   state = {
@@ -41,10 +42,23 @@ export class PokemonDetail extends Component {
   render() {
     const { name } = this.props.pokemon;
     return (
-      <div>
-        <p>{name} </p>
-        <img src={this.state.img}/>
-      </div>
+      <Card style={{backgroundColor: "peachpuff",
+        border: "solid",
+        marginBlockStart: "20px",
+        marginBlockEnd: "20px",
+        marginLeft: "20px",
+        marginRight: "20px",
+        width: "150px",
+        textAlign: "center"}}>
+          
+        <Card.Img variant="top" src={this.state.img}/>
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+        </Card.Body>
+
+        {/* <p>{name} </p>
+        <img src={this.state.img}/> */}
+      </Card>
     );
   }
 }
