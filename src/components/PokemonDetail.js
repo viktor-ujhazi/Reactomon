@@ -19,31 +19,39 @@
 // export default withRouter(PokemonDetail);
 
 import React, { Component } from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
-import axios from 'axios';
+import axios from "axios";
 
 export class PokemonDetail extends Component {
   state = {
-    id:0,
-    img:'',
-
-  }
+    id: 0,
+    img: "",
+  };
 
   componentDidMount = (props) => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon")
       .then((res) => this.setState({ pokemons: res.data.results }))
-      .then(axios
-        .get(this.props.pokemon.url)
-        .then((result) => this.setState({ id: result.data.id , img: result.data.sprites.front_default})));
+      .then(
+        axios.get(this.props.pokemon.url).then((result) =>
+          this.setState({
+            id: result.data.id,
+            img: result.data.sprites.front_default,
+          })
+        )
+      );
   };
 
   render() {
     const { name } = this.props.pokemon;
     return (
       <div>
-        <p>{name} </p>
-        <img src={this.state.img}/>
+        <Link to={`/Pokemon/${this.state.id}`}>
+          <p>{name} </p>
+        </Link>
+
+        <img src={this.state.img} />
       </div>
     );
   }
