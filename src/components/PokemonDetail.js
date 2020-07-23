@@ -23,6 +23,8 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { Card } from "react-bootstrap";
+import styled from 'styled-components';
+
 
 export class PokemonDetail extends Component {
   state = {
@@ -48,23 +50,24 @@ export class PokemonDetail extends Component {
     const { name } = this.props.pokemon;
     return (
       <Link to={`/Pokemon/${this.state.id}`}>
-        <Card
-          style={{
-            backgroundColor: "peachpuff",
-            border: "solid",
-            marginBlockStart: "20px",
-            marginBlockEnd: "20px",
-            marginLeft: "20px",
-            marginRight: "20px",
-            width: "150px",
-            textAlign: "center",
-          }}
-        >
-          <Card.Img variant="top" src={this.state.img} />
-          <Card.Body>
-            <Card.Title>{name}</Card.Title>
-          </Card.Body>
-        </Card>
+          <Card
+            style={{
+              backgroundColor: "peachpuff",
+              border: "solid",
+              marginBlockStart: "20px",
+              marginBlockEnd: "20px",
+              marginLeft: "20px",
+              marginRight: "20px",
+              width: "150px",
+              textAlign: "center",
+            }}
+            
+          >
+            <Card.Img variant="top" src={this.state.img} />
+            <Card.Body>
+              <Card.Title>{name}</Card.Title>
+            </Card.Body>
+          </Card>
       </Link>
     );
   }

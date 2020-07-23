@@ -10,6 +10,7 @@ import TypeList from "./components/TypeList";
 import DetailPage from "./components/DetailPage";
 import "./App.css";
 import { Navbar } from "react-bootstrap";
+import ModeButton from "./components/ModeButton";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <ModeButton/>
         <div style={{ textAlign: "-webkit-center" }}>
           <img src="http://pixelartmaker.com/art/435fe298d486154.png" />
           <img
@@ -24,7 +26,7 @@ class App extends Component {
             style={{ paddingLeft: "20%" }}
           />
         </div>
-        <Navbar
+        <Navbar id="navbar"
           style={{
             paddingLeft: 40,
             border: "5px solid",
