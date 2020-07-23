@@ -33,9 +33,9 @@ export class DetailPage extends Component {
 
   render() {
     return (
-      <Card style={{width: "50%", height: "500px", textAlign: "center", display: "block",
+      <Card style={{width: "50%", height: "100%", textAlign: "center", display: "block",
       marginLeft: "auto",marginRight: "auto", border:"solid", backgroundColor: "peachpuff",
-      marginBlockEnd: "30px", marginBlockStart: "30px"}}>
+      marginBlockEnd: "30px", marginBlockStart: "30px", borderWidth: "10px"}}>
           <Card.Body>
             <Card.Title style={{fontSize: "xxx-large"}}>{this.state.pokemon.name}</Card.Title>
             <Card.Img variant="top" src={this.state.pokemon.img} style={{height: "250px"}} />
@@ -48,13 +48,6 @@ export class DetailPage extends Component {
             <Card.Text>Special Defense: {this.state.pokemon.specialDefense}</Card.Text>
             <Card.Text>Speed: {this.state.pokemon.speed}</Card.Text>
           </Card.Body>
-
-
-        {/* {this.state.pokemon.name},{this.state.pokemon.base_experience},
-        {this.state.pokemon.height},{this.state.pokemon.hp},
-        {this.state.pokemon.attack},{this.state.pokemon.defense},
-        {this.state.pokemon.specialAttack},{this.state.pokemon.specialDefense},
-        {this.state.pokemon.speed} */}
       </Card>
     );
   }
