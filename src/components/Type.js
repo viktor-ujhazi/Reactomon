@@ -35,16 +35,21 @@ export class Type extends Component {
   render() {
     const { name } = this.props.type;
     return (
-      <li style={{textAlign: "center",
+      <li style={{textAlign: "center", 
+      display: "inline-block",
       border: "solid 5px",
       borderColor: "black",
       backgroundImage: "linear-gradient(45deg, indianred, transparent)",
       width: "200px",
-      marginLeft: "auto",
-      marginRight: "auto"}
+      height: "150px",
+      marginBlockStart: "20px",
+      marginBlockEnd: "20px",
+      marginLeft: "20px",
+      marginRight: "20px",
+    }
       }>
         <img style={{width:"50%"}} src={typePics[name]} />
-        {name}
+        <p>{name}</p>
       </li>
     );
   }
