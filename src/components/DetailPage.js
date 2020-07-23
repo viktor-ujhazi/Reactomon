@@ -34,7 +34,7 @@ export class DetailPage extends Component {
   render() {
     return (
       <Card id="detailCard" style={{width: "50%", height: "100%", textAlign: "center", display: "block",
-      marginLeft: "auto",marginRight: "auto", border:"solid", backgroundColor: "peachpuff",
+      marginLeft: "auto",marginRight: "auto", border:"solid", backgroundColor: this.props.backgrounds,
       marginBlockEnd: "30px", marginBlockStart: "30px", borderWidth: "10px"}}>
           <Card.Body>
             <Card.Title id="cardTitle" style={{fontSize: "xxx-large"}}>{this.state.pokemon.name}</Card.Title>

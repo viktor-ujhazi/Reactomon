@@ -42,7 +42,8 @@ class PokemonList extends Component {
         <ul style={{ textAlign: "center" }}>
           {
             this.state.pokemons.map((pokemon) => (
-            <li style={{display: "inline-block"}}><PokemonDetail key={pokemon.name} pokemon={pokemon} /></li>))
+            <li style={{display: "inline-block"}}><PokemonDetail key={pokemon.name} pokemon={pokemon} 
+                cardBackground={this.props.backgrounds} /></li>))
           }
         </ul>
             <div style={{ textAlign: "center", marginBlockEnd: "50px" }}>
@@ -51,10 +52,7 @@ class PokemonList extends Component {
             </div>
       </div>
 
-      );
-  
-        
-            
+      );       
   }
 }
 

@@ -10,15 +10,43 @@ import TypeList from "./components/TypeList";
 import DetailPage from "./components/DetailPage";
 import "./App.css";
 import { Navbar } from "react-bootstrap";
-import ModeButton from "./components/ModeButton";
-
 import "./App.css";
 
 class App extends Component {
+  state = {
+    lightMode: true,
+    navColor: "yellow",
+    cardsBackground: "peachpuff",
+    pageBackground: "white",
+  };
+
+  changeMode(){
+    if(this.state.lightMode === true){
+        this.setState({
+            lightMode: false,
+            navColor: "brown",
+            cardsBackground: "darkgray",
+            pageBackground: "grey",
+        })
+
+        document.getElementById("root").setAttribute("style", "background-color: grey;")
+    }else{
+        this.setState({
+            lightMode: true,
+            navColor: "yellow",
+            cardsBackground: "peachpuff",
+            pageBackground: "white",
+        })
+
+        document.getElementById("root").setAttribute("style", "background-color: white;")
+    }
+}
+
   render() {
     return (
       <Router>
-        <ModeButton/>
+        <button onClick = { () => this.changeMode()}>Switch Theme</button>
+
         <div style={{ textAlign: "-webkit-center" }}>
           <img src="http://pixelartmaker.com/art/435fe298d486154.png" />
           <img
@@ -26,12 +54,13 @@ class App extends Component {
             style={{ paddingLeft: "20%" }}
           />
         </div>
+
         <Navbar id="navbar"
           style={{
             paddingLeft: 40,
             border: "5px solid",
             borderColor: "cornflowerblue",
-            backgroundColor: "yellow",
+            backgroundColor: this.state.navColor,
             textAlign: "center",
             fontSize: "xxx-large",
             fontWeight: "900",
@@ -45,12 +74,14 @@ class App extends Component {
 
         <Switch>
           <Route path="/Pokemons">
-            <PokemonList />
+            <PokemonList backgrounds={this.state.cardsBackground}/>
           </Route>
           <Route path="/Types">
             <TypeList />
           </Route>
-          <Route path="/Pokemon/:id" component={DetailPage}></Route>
+        <Route path="/Pokemon/:id" render={(props) => <DetailPage backgrounds={this.state.cardsBackground}
+         {...props}/>}>
+          </Route>
         </Switch>
       </Router>
     );

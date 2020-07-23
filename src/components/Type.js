@@ -2,22 +2,22 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export class Type extends Component {
-//   componentDidMount = (props) => {
-//     console.log(this.props.pokemon);
-//   };
 
   render() {
     const { name } = this.props.type;
     return (
-      <div>
-        <p>{name}</p>
-      </div>
+      <li style={{textAlign: "center",
+      border: "solid 5px",
+      borderColor: "black",
+      backgroundImage: "linear-gradient(45deg, indianred, transparent)",
+      width: "200px",
+      marginLeft: "auto",
+      marginRight: "auto"}
+      }>
+        {name}
+      </li>
     );
   }
 }
-// // PropTypes
-// Type.propTypes = {
-//     pokemon: PropTypes.object.isRequired,
-//   };
 
 export default Type;

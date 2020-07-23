@@ -52,7 +52,7 @@ export class PokemonDetail extends Component {
       <Link to={`/Pokemon/${this.state.id}`}>
           <Card id="pokemonCard"
             style={{
-              backgroundColor: "peachpuff",
+              backgroundColor: this.props.cardBackground,
               border: "solid",
               marginBlockStart: "20px",
               marginBlockEnd: "20px",
@@ -72,10 +72,5 @@ export class PokemonDetail extends Component {
     );
   }
 }
-
-// // PropTypes
-// PokemonDetail.propTypes = {
-//   pokemon: PropTypes.object.isRequired,
-// };
 
 export default PokemonDetail;
