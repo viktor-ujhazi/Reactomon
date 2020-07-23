@@ -50,7 +50,7 @@ class App extends Component {
         <div style={{ textAlign: "-webkit-center" }}>
           <img src="http://pixelartmaker.com/art/435fe298d486154.png" />
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmlwlZ6bkQBzmOFmQ8YR8pCf6EeYJaw6iZsw&usqp=CAU"
+            src="https://24.media.tumblr.com/5b94f3545e5e0afa339efe86b6f723f4/tumblr_mgxqxcFyJT1rmazn7o1_250.gif"
             style={{ paddingLeft: "20%" }}
           />
         </div>
