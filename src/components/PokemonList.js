@@ -47,8 +47,18 @@ class PokemonList extends Component {
           }
         </ul>
             <div style={{ textAlign: "center", marginBlockEnd: "50px" }}>
-              <button onClick={ () => this.buttonclick(this.state.prev)} style={{ marginRight: "50px" }}>Previous</button>
-              <button onClick={ () => this.buttonclick(this.state.next)}>Next</button>
+              <button 
+                onClick={ () => this.buttonclick(this.state.prev)} 
+                style={{ marginRight: "50px", width: "15%",
+                backgroundColor: "cornflowerblue" }}>
+                  Previous
+                </button>
+
+              <button style={{width: "15%",
+                backgroundColor: "cornflowerblue"}} 
+                onClick={ () => this.buttonclick(this.state.next)}>
+                  Next
+                </button>
             </div>
       </div>
 

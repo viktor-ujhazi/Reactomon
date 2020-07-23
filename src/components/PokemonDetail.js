@@ -61,7 +61,6 @@ export class PokemonDetail extends Component {
               width: "150px",
               textAlign: "center",
             }}
-            
           >
             <Card.Img variant="top" src={this.state.img} />
             <Card.Body>
