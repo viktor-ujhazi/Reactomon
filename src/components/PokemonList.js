@@ -6,18 +6,55 @@ import PropTypes from "prop-types";
 class PokemonList extends Component {
   state = {
     pokemons: [],
+    next: "https://pokeapi.co/api/v2/pokemon",
+    
+    
   };
 
-  componentDidMount() {
+  buttonclick(param){
+    if (param){
     axios
-      .get("https://pokeapi.co/api/v2/pokemon")
-      .then((res) => this.setState({ pokemons: res.data.results }));
+      .get(param)
+      .then((res) => this.setState({ 
+        pokemons: res.data.results,
+        next: res.data.next,
+        prev: res.data.previous,
+      
+      }));
+    }
+  }
+
+  componentDidMount() {
+    // axios
+    //   .get(this.state.next)
+    //   .then((res) => this.setState({ 
+    //     pokemons: res.data.results,
+    //     next: res.data.next,
+    //     prev: res.data.previous,
+      
+    //   }));
+    this.buttonclick(this.state.next);
   }
 
   render() {
-    return this.state.pokemons.map((pokemon) => (
-      <li style={{display: "inline-block"}}><PokemonDetail key={pokemon.name} pokemon={pokemon} /></li>
-    ));
+    return(
+      <div>
+        <ul style={{ textAlign: "center" }}>
+          {
+            this.state.pokemons.map((pokemon) => (
+            <li style={{display: "inline-block"}}><PokemonDetail key={pokemon.name} pokemon={pokemon} /></li>))
+          }
+        </ul>
+            <div style={{ textAlign: "center", marginBlockEnd: "50px" }}>
+              <button onClick={ () => this.buttonclick(this.state.prev)} style={{ marginRight: "50px" }}>Previous</button>
+              <button onClick={ () => this.buttonclick(this.state.next)}>Next</button>
+            </div>
+      </div>
+
+      );
+  
+        
+            
   }
 }
 
