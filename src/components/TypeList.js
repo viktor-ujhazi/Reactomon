@@ -5,6 +5,7 @@ import axios from "axios";
 class TypeList extends Component {
   state = {
     types: [],
+    imgs: [],
   };
 
   componentDidMount() {

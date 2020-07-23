@@ -45,7 +45,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <button onClick = { () => this.changeMode()}>Switch Theme</button>
+        <button style={{marginLeft: "10%",
+          width: "25%",
+          backgroundColor: "bisque"}} onClick = { () => this.changeMode()}>Switch Theme</button>
 
         <div style={{ textAlign: "-webkit-center" }}>
           <img src="http://pixelartmaker.com/art/435fe298d486154.png" />
