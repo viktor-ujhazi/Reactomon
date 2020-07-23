@@ -50,7 +50,7 @@ export class PokemonDetail extends Component {
     const { name } = this.props.pokemon;
     return (
       <Link to={`/Pokemon/${this.state.id}`}>
-          <Card
+          <Card id="pokemonCard"
             style={{
               backgroundColor: "peachpuff",
               border: "solid",

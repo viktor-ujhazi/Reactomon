@@ -45,13 +45,6 @@ class App extends Component {
 
         <Switch>
           <Route path="/Pokemons">
-            {/* <ul style={{ textAlign: "center" }}>
-              <PokemonList />
-            </ul>
-            <div style={{ textAlign: "center", marginBlockEnd: "50px" }}>
-              <button onClick={<PokemonList />} style={{ marginRight: "50px" }}>Previous</button>
-              <button>Next</button>
-            </div> */}
             <PokemonList />
           </Route>
           <Route path="/Types">
@@ -60,9 +53,6 @@ class App extends Component {
           <Route path="/Pokemon/:id" component={DetailPage}></Route>
         </Switch>
       </Router>
-      // <
-      //   PokemonList pokemons={this.state.pokemons}
-      // /><button onClick={this.componentDidMount(this.next)}>kfkfkf</button>
     );
   }
 }

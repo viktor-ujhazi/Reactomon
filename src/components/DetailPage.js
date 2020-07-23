@@ -33,12 +33,12 @@ export class DetailPage extends Component {
 
   render() {
     return (
-      <Card style={{width: "50%", height: "100%", textAlign: "center", display: "block",
+      <Card id="detailCard" style={{width: "50%", height: "100%", textAlign: "center", display: "block",
       marginLeft: "auto",marginRight: "auto", border:"solid", backgroundColor: "peachpuff",
       marginBlockEnd: "30px", marginBlockStart: "30px", borderWidth: "10px"}}>
           <Card.Body>
-            <Card.Title style={{fontSize: "xxx-large"}}>{this.state.pokemon.name}</Card.Title>
-            <Card.Img variant="top" src={this.state.pokemon.img} style={{height: "250px"}} />
+            <Card.Title id="cardTitle" style={{fontSize: "xxx-large"}}>{this.state.pokemon.name}</Card.Title>
+            <Card.Img id="cardImg" variant="top" src={this.state.pokemon.img} style={{height: "250px"}} />
             <Card.Text>Base XP: {this.state.pokemon.base_experience}</Card.Text>
             <Card.Text>Height: {this.state.pokemon.height}</Card.Text>
             <Card.Text>HP: {this.state.pokemon.hp}</Card.Text>
